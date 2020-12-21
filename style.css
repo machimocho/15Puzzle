@@ -1,0 +1,44 @@
+:root {
+    --main-bg-color: #173F5F;
+    --success-bg-color:#20639B;
+    --secondary-bg-color: #3CAEA3;
+    --warning-bg-color: #F6D55C;
+    --danger-bg-color: #ED553D;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--main-bg-color);
+    font-family: sans-serif;
+}
+
+#title{
+    width: 100vw;
+    text-align: center;
+    color: white;
+}
+
+#box {
+    width: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.square {
+    height: 78px;
+    width: 78px;
+    background-color: var(--secondary-bg-color);
+    color: var(--main-bg-color);
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--warning-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large
+}
