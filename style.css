@@ -40,5 +40,11 @@ html, body{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: xx-large
+    font-size: xx-large;
+    cursor: pointer;
+}
+
+#win {
+    text-align: center;
+    color: var(--warning-bg-color);
 }
