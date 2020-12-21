@@ -103,9 +103,8 @@ const handleclick = (e) => {
   }
 };
 
-bRestart,
-  addEventListener("click", function () {
-    startGame();
-  });
+bRestart.addEventListener("click", function (e) {
+  startGame();
+});
 
 startGame();
