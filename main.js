@@ -3,11 +3,12 @@ let boxLength = 4;
 let empthyIndex;
 let solvedMessage = document.getElementById("win");
 let box = document.getElementById("box");
-let solvedNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, ''];
+let solvedNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, ""];
+let bRestart = document.getElementById("bRestart");
 
 // Functions
 const drawInitialNumbers = () => {
-  let numbers = [...solvedNumbers]
+  let numbers = [...solvedNumbers];
   let squares = document.getElementsByClassName("square");
 
   //https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
@@ -47,15 +48,19 @@ const startGame = () => {
 };
 
 const verifySolved = () => {
-    let squares = Array.from(document.getElementsByClassName("square")).map(function(ele){
-        return isNaN(ele.innerText == '' ? 'x' : ele.innerText) ? '' : parseInt(ele.innerText, 10)
-    });
-    let ordered = (JSON.stringify(solvedNumbers) === JSON.stringify(squares));
-    if (ordered){
-        solvedMessage.style.display = "";
-        box.removeEventListener("click", handleclick);
+  let squares = Array.from(document.getElementsByClassName("square")).map(
+    function (ele) {
+      return isNaN(ele.innerText == "" ? "x" : ele.innerText)
+        ? ""
+        : parseInt(ele.innerText, 10);
     }
-}
+  );
+  let ordered = JSON.stringify(solvedNumbers) === JSON.stringify(squares);
+  if (ordered) {
+    solvedMessage.style.display = "";
+    box.removeEventListener("click", handleclick);
+  }
+};
 
 const toogle = (divClicked) => {
   let clickedIndex = parseInt(divClicked.id.substr(2), 10);
@@ -67,9 +72,9 @@ const toogle = (divClicked) => {
 };
 
 const applyChanges = (sqr) => {
-    toogle(sqr);
-    verifySolved()
-}
+  toogle(sqr);
+  verifySolved();
+};
 
 const handleclick = (e) => {
   let sqr = e.target;
@@ -78,26 +83,29 @@ const handleclick = (e) => {
     // Verify if the clicked square is next to the empthy one
     if (clickedIndex + boxLength == empthyIndex) {
       // Up
-     applyChanges(sqr)
+      applyChanges(sqr);
     } else if (clickedIndex - boxLength == empthyIndex) {
       // Down
-     applyChanges(sqr)
+      applyChanges(sqr);
     } else if (
       clickedIndex - 1 == empthyIndex &&
       clickedIndex % boxLength != 0
     ) {
       // Left
-     applyChanges(sqr)
+      applyChanges(sqr);
     } else if (
       clickedIndex + 1 == empthyIndex &&
       clickedIndex % boxLength != boxLength - 1
     ) {
       // Right
-     applyChanges(sqr)
+      applyChanges(sqr);
     }
   }
 };
 
-
+bRestart,
+  addEventListener("click", function () {
+    startGame();
+  });
 
 startGame();
