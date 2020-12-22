@@ -6,7 +6,12 @@ Javascript 15 Puzzle Game
 ## Description
 A pure Javascript, HTML and CSS 15 Puzzle Game. No Frameworks or external libraries.
 
+## Author
+Mario Antonio Alvarez Gómez  
+*Twitter*: @machimocho  
+*Email*: machimocho@gmail.com
+
 ## Installing
-Just clone and open index.html on you browser
+Just clone and open index.html on your browser
 
 Watch the **DEMO** <a href="https://sharp-franklin-ff9e6d.netlify.app/">here</a>
