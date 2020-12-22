@@ -48,3 +48,8 @@ html, body{
     text-align: center;
     color: var(--warning-bg-color);
 }
+
+.repo {
+    color: white;
+    margin-top: 1rem;
+}
